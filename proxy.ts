@@ -5,7 +5,7 @@ const authRoutes = ["/sign-in", "/sign-up"];
 const protectedRoutes = ["/dashboard"];
 const authSecret = process.env.AUTH_SECRET ?? process.env.NEXTAUTH_SECRET;
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { nextUrl } = req;
   const token = await getToken({
     req,
